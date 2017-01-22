@@ -9,7 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var txtName: UITextField!
 
+    @IBOutlet weak var txtEmail: UITextField!
+    
+    @IBOutlet weak var txtPhone: UITextField!
+    
+    @IBAction func loginButton(_ sender: UIButton) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
