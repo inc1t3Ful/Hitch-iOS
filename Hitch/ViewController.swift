@@ -12,27 +12,11 @@ class ViewController: UIViewController {
     
     // Mark: Properties
     
-    @IBOutlet weak var txtName: UITextField!
-    @IBOutlet weak var txtEmail: UITextField!
-    @IBOutlet weak var txtPhone: UITextField!
-    @IBAction func loginButton(_ sender: UIButton) {
-    }
-    @IBAction func registerButton(_ sender: UIButton) {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        
-        if (![defaults boolForKey!@"registered"]){
-            NSLog(@"No user registerd");
-            _loginBin.hidden = YES;
-        }
-        else {
-            NSLog(@"User is registered");
-            
-        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +24,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // When protected page is loaded, login page will be displayed
+    override func viewDidAppear(_ animated: Bool) {
+        self.performSegue(withIdentifier: "loginView", sender: self)
+    }
 }
 
